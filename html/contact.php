@@ -71,7 +71,7 @@ if (!$isLoggedIn) {
       </nav>
    </header>
    <section class="contact" id="contact">
-      <h2 class="heading"> Become a <span>Creator</span> ! <span> </span></h2>
+      <h2 class="heading"> <?php echo $isCreator ? 'Contact <span>Us</span> !' : 'Become <span>Creator</span> !'; ?></h2>
       <div class="container-contact">
          <form name="form1" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="ae80fd77-91dc-45f7-9f55-5474379144ac">
