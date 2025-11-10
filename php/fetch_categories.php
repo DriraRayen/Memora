@@ -1,7 +1,13 @@
 <?php
-require '../php/connexion.php';
+require 'connexion.php';
 
 header('Content-Type: application/json');
+
+// Check if connection failed
+if ($conn->connect_error) {
+    echo json_encode(['error' => 'Database connection failed: ' . $conn->connect_error]);
+    exit();
+}
 
 // Fetch categories from the database
 $query = "SELECT id, name FROM categories";

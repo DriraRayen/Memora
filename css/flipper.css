@@ -1,270 +1,261 @@
 /*flipper animations */
 .flip-card {
-  perspective: 1000px; /* Enables 3D perspective */
-  position: relative;
-  height: 30em;
-  width: 21em;
-  overflow: visible; /* Ensure no part of the card is clipped */
+   perspective: 1000px; /* Enables 3D perspective */
+   position: relative;
+   height: 30em;
+   width: 21em;
+   overflow: visible; /* Ensure no part of the card is clipped */
 }
 
 .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s ease; /* Smooth flipping animation */
-  transform-style: preserve-3d; /* Enables 3D transformation */
+   position: relative;
+   width: 100%;
+   height: 100%;
+   transition: transform 0.6s ease; /* Smooth flipping animation */
+   transform-style: preserve-3d; /* Enables 3D transformation */
 }
 
 .flip-card-inner.flipped {
-  transform: rotateY(180deg); /* Flips the card */
+   transform: rotateY(180deg); /* Flips the card */
 }
 
 .flip-card-front,
 .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; /* Hides the back side when not flipped */
-  top: 0;
-  left: 0;
-  z-index: 2; /* Ensure both sides are above the parent container */
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   backface-visibility: hidden; /* Hides the back side when not flipped */
+   top: 0;
+   left: 0;
+   z-index: 2; /* Ensure both sides are above the parent container */
 }
 
 .flip-card-front {
-  transform: rotateY(0deg); /* Ensures the front side is visible initially */
-  z-index: 2; /* Front side is on top initially */
+   transform: rotateY(0deg); /* Ensures the front side is visible initially */
+   z-index: 2; /* Front side is on top initially */
 }
 
 .flip-card-back {
-  transform: rotateY(180deg); /* Ensures the back side is hidden initially */
-  z-index: 1; /* Back side is beneath the front side initially */
+   transform: rotateY(180deg); /* Ensures the back side is hidden initially */
+   z-index: 1; /* Back side is beneath the front side initially */
 }
 /* */
 
 /*the rest of the page */
 .revise {
-  margin-top: 3em;
+   margin-top: 3em;
 }
 .revise-holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10em;
-  padding: 2em 0 0 0; /**/
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10em;
+   padding: 2em 0 0 0; /**/
 }
 
 .fading-title {
-  font-size: 3.5em;
-  color: rgba(255, 255, 255, 0.57);
+   font-size: 3.5em;
+   color: rgba(255, 255, 255, 0.57);
 }
 .fading-blue {
-  color: rgba(49, 193, 225, 0.57);
+   color: rgba(49, 193, 225, 0.57);
 }
 .scroll-holder {
-  display: flex;
-  justify-content: space-between;
-  padding: 1.6em 1em;
-  align-items: center;
-  height: 3em;
-  width: 21em;
-  border-radius: 30px;
-  border: 2px solid #fff;
-  background: #0f2438;
+   display: flex;
+   justify-content: space-between;
+   padding: 1.6em 1em;
+   align-items: center;
+   height: 3em;
+   width: 21em;
+   border-radius: 30px;
+   border: 2px solid #fff;
+   background: #0f2438;
 }
 .scroll-holder svg {
-  cursor: pointer;
-  width: 1.4em;
-  height: auto;
+   cursor: pointer;
+   width: 1.4em;
+   height: auto;
 }
 .revise .btx-blue-reverse {
-  margin: 0 3.5em;
+   margin: 0 3.5em;
 }
 
 .revise-holder-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 7.6em;
-  padding: 2em 0 0 0; /**/
-  margin-bottom: 9em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 7.6em;
+   padding: 2em 0 0 0; /**/
+   margin-bottom: 9em;
 }
 .quiz {
-  justify-self: center;
-  width: 731px;
-  gap: 2em;
-  padding: 2em;
+   justify-self: center;
+   width: 731px;
+   gap: 2em;
+   padding: 2em;
 }
 .quiz-parameter-holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 7em;
-  padding-left: 2em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 7em;
+   padding-left: 2em;
 }
 .quiz-parameter {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2em;
-  padding: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+   gap: 2em;
+   padding: 0;
 }
 .quiz-parameter div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-  font-size: 1.1em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1em;
+   font-size: 1.1em;
 }
 .quiz .button-holder {
-  margin-top: 3.2em;
-  gap: 5em;
+   margin-top: 3.2em;
+   gap: 5em;
 }
 .quiz .btx-blue-reverse {
-  width: 9em;
-  height: 2.5em;
-  font-size: 1.2em;
-  text-align: center;
+   width: 9em;
+   height: 2.5em;
+   font-size: 1.2em;
+   text-align: center;
 }
 .quiz .btx-blue {
-  width: 9em;
-  height: 2.5em;
-  font-size: 1.2em;
-  text-align: center;
+   width: 9em;
+   height: 2.5em;
+   font-size: 1.2em;
+   text-align: center;
 }
 .quiz h2 {
-  text-align: center;
-  margin-bottom: 2em;
+   text-align: center;
+   margin-bottom: 2em;
 }
 footer {
-  margin-top: 9em;
+   margin-top: 9em;
 }
 #quiz-container {
-  margin-top: 7.8em;
+   margin-top: 7.8em;
 }
 
 #flash-header-1 {
-  justify-content: center;
-  height: 3.8em;
+   justify-content: center;
+   height: 3.8em;
 }
 #quiz-execute {
-  padding-top: 3em;
+   padding-top: 3em;
 }
 #quiz-execute .flip-card-front,
 #quiz-execute .flip-card-back {
-  gap: 4em;
+   gap: 4em;
 }
 
 #quiz-execute .flash-group {
-  padding: 0;
-  margin: 2em 0 0 0;
+   padding: 0;
+   margin: 2em 0 0 0;
 }
 #flashcard-quiz {
-  gap: 2em;
+   gap: 2em;
 }
 #flashcard-quiz .btx-white-reverse {
-  width: 80%;
-  height: 3.3em;
+   width: 80%;
+   height: 3.3em;
 }
 #quiz-execute .btx-blue-reverse {
-  height: 2.85em;
-  width: 10.1em;
-  font-weight: 500;
-  font-size: 1.3em;
-  border-width: 2px;
+   height: 2.85em;
+   width: 10.1em;
+   font-weight: 500;
+   font-size: 1.3em;
+   border-width: 2px;
    display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
+   justify-content: center;
+   align-items: center;
+   text-align: center;
 }
 #quiz-execute .revise-holder-2 {
-  gap: 2.6em;
-  
+   gap: 2.6em;
 }
 #quiz-execute .scroll-holder {
-  justify-content: center;
-  width: 12.5em;
-  height: 2.5em;
-  font-size: 1.1em;
+   justify-content: center;
+   width: 12.5em;
+   height: 2.5em;
+   font-size: 1.1em;
 }
 #quiz-execute .scroll {
-  font-size: 1em;
-  font-weight: 500;
+   font-size: 1em;
+   font-weight: 500;
 }
 .quiz-result-holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 8em;
 }
 .quiz-result {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5em;
-  padding: 0;
-  padding-left: 1em;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-start;
+   gap: 1.5em;
+   padding: 0;
 }
 .quiz-result-holder .quiz-stats {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2em;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   gap: 1em;
+}
+.quiz-result-holder .quiz-stats p {
+   margin: 0;
+   font-size: 1.1em;
 }
 #quiz-result h2 {
-  margin: 0;
-  padding-bottom: 1em;
+   margin: 0;
+   padding-bottom: 1em;
 }
 #quiz-result .button-holder {
-  margin: 0;
-  padding-top: 2.5em;
+   margin: 0;
+   padding-top: 2.5em;
 }
 #quiz-result .btx-white-reverse,
 #quiz-result .btx-blue {
-  width: 11em;
-  height: 2.5em;
-  font-size: 1.2em;
+   width: 11em;
+   height: 2.5em;
+   font-size: 1.2em;
 }
-/* Score bprogress bar animation */
+/* Score progress bar animation */
 /* Outer circle with conic-gradient progress and animation */
 .score-holder-out {
-  width: 233px;
-  height: 233px;
-  border-radius: 50%;
-  background: conic-gradient(#31c1e1 0%, white 0%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  animation: fillProgress 2s forwards ease-out;
+   width: 233px;
+   height: 233px;
+   border-radius: 50%;
+   background: conic-gradient(#31c1e1 0%, white 0%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   transition: background 2s ease-out;
 }
 
 /* Inner circle (background center) */
 .score-holder-in {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  background: #0f2438;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   width: 210px;
+   height: 210px;
+   border-radius: 50%;
+   background: #0f2438;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 /* Score text */
 .score {
-  font-size: 4.45em;
-  font-weight: 500;
-  color: #31c1e1;
-}
-
-/* Animation Keyframes */
-@keyframes fillProgress {
-  from {
-    background: conic-gradient(#31c1e1 0%, white 0%);
-  }
-  to {
-    background: conic-gradient(#31c1e1 80%, white 0%);
-  }
+   font-size: 4.45em;
+   font-weight: 500;
+   color: #31c1e1;
 }

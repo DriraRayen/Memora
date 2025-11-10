@@ -1,21 +1,10 @@
 # Operating System Files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
-Desktop.ini
 
 # IDE and Editor Files
 .vscode/
 .idea/
-*.sublime-project
-*.sublime-workspace
-*.swp
-*.swo
-*~
 
 # PHP
 vendor/
@@ -25,38 +14,15 @@ composer.lock
 # Database Connection (Contains Sensitive Credentials)
 php/connexion.php
 
-# Logs
-*.log
-error_log
-debug.log
-
+db/
 # Environment Files (Contains Sensitive Configuration)
 .env
 .env.local
-.env.*.local
 .env.production
 
-# Database
+# Logs
+*.log
+
+# Database Backups
 *.sql.backup
 *.sql.bak
-
-# Temporary Files
-*.tmp
-*.temp
-tmp/
-temp/
-
-# User Uploads (if you have an uploads directory)
-uploads/*
-!uploads/.gitkeep
-
-# Cache
-cache/
-*.cache
-
-# Session Files
-sessions/
-
-# Backup Files
-*.bak
-*~

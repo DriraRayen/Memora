@@ -14,11 +14,8 @@ if (ini_get("session.use_cookies")) {
 }
 session_destroy();
 echo "<script>
-    if (alert('You have been logged out. Please come back!!!!')) {
-        window.location.href = '../html/index.html';
-    } else {
-        window.location.href = '../html/index.html';
-    }
+    alert('See You Soon!\\n\\nYou have been successfully logged out.\\n\\nThank you for using Memora. Come back soon!');
+    window.location.href = '../index.php';
 </script>";
 exit();
 ?>

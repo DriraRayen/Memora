@@ -3,11 +3,13 @@ session_start(); // Start the session at the very beginning
 
 require '../php/connexion.php';
 
+$isCreator = isset($_SESSION['user_creator']) && $_SESSION['user_creator'] == 1;
+
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
     echo "<script>
-            alert('You must be logged in to access this page.');
-            window.location.href = 'signin.html';
+            alert('Access Restricted\\n\\nYou must be logged in to create flashcard sets.\\n\\nPlease sign in to continue.');
+            window.location.href = 'signin.php';
           </script>";
     exit();
 }
@@ -24,15 +26,18 @@ if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
     if ($user['creator'] != 1) {
         echo "<script>
-                alert('You do not have permission to access this page.');
-                window.location.href = 's-index.php';
+                if (data.creator != 1) {
+                alert('Creator Access Only\\n\\nThis page is only accessible to content creators.\\n\\nContact us if you\\'d like to become a creator!');
+                window.location.href = '../html/contact.php';
+            }
+                window.location.href = '../index.php';
               </script>";
         exit();
     }
 } else {
     echo "<script>
-            alert('User not found.');
-            window.location.href = 'signin.html';
+            alert('Account Error\\n\\nWe couldn\\'t find your account information.\\n\\nPlease sign in again.');
+            window.location.href = 'signin.php';
           </script>";
     exit();
 }
@@ -65,28 +70,37 @@ $conn->close();
                 <h1>Memora</h1>
             </span>
             <span style="padding-right:110px;">
-                <a href="s-index.php">Home</a>
+                <a href="../index.php">Home</a>
                 <a href="browse.php">Browse</a>
-                <a href="create.php">create</a>
-                <a href="contact.html">Become Creator</a>
+                <a href="<?php echo $isCreator ? 'create.php' : 'contact.php'; ?>">Create</a>
+                <a href="contact.php"><?php echo $isCreator ? 'Contact' : 'Become Creator'; ?></a>
             </span>
             <span id="user-header">
-                <svg onclick="handleLogout()" class="profile-logo" xmlns="http://www.w3.org/2000/svg" width="42"
-                    height="40" viewBox="0 0 42 40" fill="none">
-                    <g clip-path="url(#clip0_121_715)">
-                        <path
-                            d="M28.2639 17.5C28.2639 21.65 24.8208 25 20.5556 25C16.2903 25 12.8472 21.65 12.8472 17.5C12.8472 13.35 16.2903 10 20.5556 10C24.8208 10 28.2639 13.35 28.2639 17.5Z"
-                            fill="#31C1E1" />
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M41.1111 20C41.1111 31.05 31.9125 40 20.5556 40C9.19861 40 0 31.05 0 20C0 8.95 9.19861 0 20.5556 0C31.9125 0 41.1111 8.95 41.1111 20ZM10.2778 34.375C10.6889 33.71 14.6715 27.5 20.5299 27.5C26.3625 27.5 30.3708 33.725 30.7819 34.375C33.1712 32.7675 35.1234 30.6193 36.4706 28.1153C37.8178 25.6113 38.5197 22.8264 38.516 20C38.516 10.325 30.4736 2.5 20.5299 2.5C10.5861 2.5 2.54375 10.325 2.54375 20C2.54375 25.95 5.60139 31.225 10.2778 34.375Z"
-                            fill="#31C1E1" />
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_121_715">
-                            <rect width="41.1111" height="40" fill="white" />
-                        </clipPath>
-                    </defs>
-                </svg>
+                <div class="profile-container">
+                    <svg class="profile-logo" xmlns="http://www.w3.org/2000/svg" width="42" height="40"
+                        viewBox="0 0 42 40" fill="none">
+                        <g clip-path="url(#clip0_121_715)">
+                            <path
+                                d="M28.2639 17.5C28.2639 21.65 24.8208 25 20.5556 25C16.2903 25 12.8472 21.65 12.8472 17.5C12.8472 13.35 16.2903 10 20.5556 10C24.8208 10 28.2639 13.35 28.2639 17.5Z"
+                                fill="#31C1E1" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M41.1111 20C41.1111 31.05 31.9125 40 20.5556 40C9.19861 40 0 31.05 0 20C0 8.95 9.19861 0 20.5556 0C31.9125 0 41.1111 8.95 41.1111 20ZM10.2778 34.375C10.6889 33.71 14.6715 27.5 20.5299 27.5C26.3625 27.5 30.3708 33.725 30.7819 34.375C33.1712 32.7675 35.1234 30.6193 36.4706 28.1153C37.8178 25.6113 38.5197 22.8264 38.516 20C38.516 10.325 30.4736 2.5 20.5299 2.5C10.5861 2.5 2.54375 10.325 2.54375 20C2.54375 25.95 5.60139 31.225 10.2778 34.375Z"
+                                fill="#31C1E1" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_121_715">
+                                <rect width="41.1111" height="40" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div class="profile-dropdown">
+                        <div class="profile-info">
+                            <p class="profile-name"><?php echo htmlspecialchars($_SESSION['user_firstname'] . ' ' . $_SESSION['user_lastname']); ?></p>
+                            <p class="profile-email"><?php echo htmlspecialchars($_SESSION['user_email']); ?></p>
+                        </div>
+                        <button class="btx-blue logout-btn" onclick="handleLogout()">Logout</button>
+                    </div>
+                </div>
             </span>
         </nav>
     </header>
@@ -219,10 +233,10 @@ $conn->close();
             </div>
             <div class="gap-footer">
                 <h4>Memora</h4>
-                <a href="s-index.html">Home</a>
-                <a href="browse.html">Browse</a>
-                <a href="create.html">Create</a>
-                <a href="contact.html">contact</a>
+                <a href="../index.php">Home</a>
+                <a href="browse.php">Browse</a>
+                <a href="create.php">Create</a>
+                <a href="contact.php">contact</a>
             </div>
             <div class="gap-footer">
                 <h4>Categories</h4>

@@ -1,13 +1,13 @@
 <?php
-require '../php/connexion.php'; // Include the database connection file
-session_start(); // Start the session at the very beginning 
+session_start(); // Start the session at the very beginning
+require 'connexion.php'; // Include the database connection file 
 
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     echo "<script>
-            alert('User not logged in. Please log in and try again.');
-            window.location.href = '../html/signin.html';
+            alert('Authentication Required\\n\\nYou need to be logged in to create flashcard sets.\\n\\nPlease sign in to continue.');
+            window.location.href = '../html/signin.php';
           </script>";
     exit();
 } else {
@@ -72,12 +72,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $insert_flashcard_sql->close();
 
         echo "<script>
-                alert('Set and flashcards created successfully!');
-                window.location.href = '../html/create.php';
+                alert('Success!\\n\\nYour flashcard set has been created successfully!\\n\\nYou can now use it to study and revise.');
+                window.location.href = '../html/browse.php';
               </script>";
     } else {
         echo "<script>
-                alert('Error: Unable to create set. Please try again.');
+                alert('Creation Failed\\n\\nWe couldn\\'t save your flashcard set.\\n\\nPlease check your internet connection and try again.');
                 window.location.href = '../html/create.php';
               </script>";
     }

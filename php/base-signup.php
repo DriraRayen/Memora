@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Check if passwords match
     if ($password !== $confirm_password) {
         echo "<script>
-                alert('Passwords do not match!');
-                window.location.href = '../html/signup.html';
+                alert('Password Mismatch\\n\\nThe passwords you entered do not match. Please make sure both password fields are identical.');
+                window.location.href = '../html/signup.php';
               </script>";
         exit();
     } else {
@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($result->num_rows > 0) {
             // Email already exists
             echo "<script>
-                    alert('An account with this email already exists. Please log in or reset your password.');
-                    window.location.href = '../html/signup.html';
+                    alert('Email Already Registered\\n\\nThis email address is already associated with an account.\\n\\nPlease sign in or use a different email address.');
+                    window.location.href = '../html/signup.php';
                   </script>";
             exit();
         } else {
@@ -43,15 +43,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($conn->query($sql) === TRUE) {
                 echo "<script>
-                        alert('Signup successful! Redirecting to login page...');
-                        window.location.href = '../html/signin.html';
+                        alert('Welcome to Memora!\\n\\nYour account has been created successfully.\\nRedirecting you to the login page...');
+                        window.location.href = '../html/signin.php';
                       </script>";
                 exit();
             } else {
                 // Handle database insertion error
                 echo "<script>
-                        alert('Error: Unable to complete signup. Please try again later.');
-                        window.location.href = '../html/signup.html';
+                        alert('Registration Failed\\n\\nWe encountered an error while creating your account.\\n\\nPlease try again in a few moments or contact support if the problem persists.');
+                        window.location.href = '../html/signup.php';
                       </script>";
                 exit();
             }

@@ -69,17 +69,6 @@ CREATE TABLE `flashcards` (
 -- Dumping data for table `flashcards`
 --
 
-INSERT INTO `flashcards` (`id`, `set_id`, `question`, `answer`, `hint`, `option_1`, `option_2`, `option_3`, `option_4`) VALUES
-(1, 1, 'what does \\\'WW1\\\' stand for', 'World War One ', '***** *** ***', 'World War One ', 'World Wide One ', 'Wide War One', 'Wide War One '),
-(2, 2, 'question 1', 'answer', 'this is the hint', 'zf', 'wrotn', 'wrong', 'wrong'),
-(3, 2, 'questithdt', 'answer 2', 'this is second the hint', 'right', 'wrong', 'wrong', 'wrong'),
-(4, 3, 'sfa', 'zad', 'adazd', 'azdz', 'azd', 'qsdqd', 'adazd'),
-(5, 4, 'k:nd:,', 'ld', 'mozknmd', 'knd', 'mlzd', 'modknezd', 'kdjlznd'),
-(6, 5, 'efrf', 'rf\\\'trgft\\\'g', 'vtyh-yuh', 'tcrvrg', 'tcrgrctgrctg', 'tvgthh(tg', 'vyhvh'),
-(7, 6, 'What does WW1 stand for', 'World War One', '***** *** ***', 'World War One', 'Wide War One', 'Wrong', 'Wrong'),
-(8, 6, 'When did ww1 start ', '1914', ' after the assassination of Archduke Franz Ferdinand', '1914', '1916', '1918', '1920'),
-(9, 7, 'what does ww1 stand for', 'World War One', '**** *** ***', 'World War One', 'wrong', 'wrong', 'wrong'),
-(10, 7, 'When did ww1 start', '1914', ' after the assassination of Archduke Franz Ferdinand', '1914', '1912', '1916', '1918');
 
 -- --------------------------------------------------------
 
@@ -97,16 +86,7 @@ CREATE TABLE `flashcard_sets` (
 
 --
 -- Dumping data for table `flashcard_sets`
---
 
-INSERT INTO `flashcard_sets` (`id`, `user_id`, `category_id`, `title`, `description`) VALUES
-(1, 2, 1, 'WW1 chapter 1', 'A brutal global war'),
-(2, 2, 1, 'WW1 chapter 2', 'description'),
-(3, 2, 1, 'WW1 chapter 3', 'lmkqdsf'),
-(4, 2, 1, 'WW1 chapter 4', ':lshdijlae'),
-(5, 4, 1, 'WW1 chapter 5', 'A brutal global war'),
-(6, 5, 1, 'WW1 chapter 6', 'A brutal global war'),
-(7, 5, 1, 'WW1 chapter 7', 'A brutal global war');
 
 -- --------------------------------------------------------
 
@@ -127,16 +107,6 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `firstname`, `lastname`, `creator`) VALUES
-(2, 'rayen.drira04@gmail.com', '$2y$10$Su/oSbjHJKo53hb8w2mvQ.Ki8xMqN.vcYBvhQ8AQy1crNrhK4WsDO', 'Rayen', 'Drira', 1),
-(3, 'admin@gmail.com', '$2y$10$xEpLWZTAO45TycmAGokpxuIdj4sg0EIMACddWRRBMoYDyoCNU3tdm', 'admin', 'admin', 0),
-(4, 'admin1@gmail.com', '$2y$10$YD0ZiWcSpboqmoXjpZTeHuenKdTojn3DiL4Da0Uy2AAmi8J.Hm9JW', 'admin', 'admin', 1),
-(5, 'rayen@gmail.com', '$2y$10$DHtseHexB6wsGcPqrExQzeDh8pCNwMYDkhSnKzj8sTt7ZdKkew5/i', 'Rayen', 'Drira', 1),
-(6, 'rayen1@gmail.com', '$2y$10$.0YPOhmW21XyM4wYiTb0leR6JWkA/M9XsiaLj3cbyvsi08KHVtJ5K', 'Rayen', 'Drira', 0),
-(7, 'rayen2@gmail.com', '$2y$10$BzP3LaQxa0xA.GCcJAuCZ.86r9Co1zf1vw7Tg7ghY9m2UP6gpm9Tu', 'Rayen', 'Drira', 0),
-(8, 'rayen3@gmail.com', '$2y$10$TzqlorVPfn2AZ9jmiXWtHuoQfNU7G3eCicNh6kanEUbBZiQYcSty2', 'Rayen', 'Drira', 0),
-(9, 'rayen5@gmail.com', '$2y$10$5TDJetgHglXTWOmGlp2IE.xbLh35wFMpDxuk5OUcDZmepk5XQl0Zq', 'Rayen', 'Drira', 0),
-(10, 'rayen8@gmail.com', '$2y$10$83f3g.c.9JzhSI9iorS3N.kR2TMteTeKKZvRKduAkNMaXpnCSSSSW', 'Rayen', 'Drira', 0);
 
 --
 -- Indexes for dumped tables
