@@ -6,22 +6,68 @@
 
 ## 🚀 Features
 
-- Create, edit, and delete flashcards  
-- Organize cards by chapters or modules  
-- Test yourself and track your scores  
-- User authentication (Login/Register)  
-- Contact form (sends email directly)  
-- Clean and user-friendly interface  
-- **Coming soon**: Multiplayer mode
+-  Create, edit, and delete flashcards
+-  Organize cards by chapters or modules
+-  Test yourself and track your scores
+-  User authentication (Login/Register)
+-  Contact form (sends email directly)
+-  Clean and user-friendly interface
+-  **Coming soon**: Multiplayer mode
 
 ---
 
 ## ⚙️ Setup
 
-1. Clone or download the project
-2. Import the database (`memora.sql`) via phpMyAdmin
-3. Configure `php/connexion.php` with your DB credentials
-4. Start XAMPP and run `http://localhost/memora/html/index.php`
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/RayenDrira/Memora.git
+cd Memora
+```
+
+### 2. Database Setup
+
+-  Import `db/memora.sql` via phpMyAdmin to create the database structure with categories
+-  (Optional) Import `db/sample_data.sql` to populate with 180 sample flashcards
+
+### 3. Configure Database Connection
+
+**IMPORTANT: Never commit your database credentials!**
+
+1. Copy the template file:
+   ```bash
+   cp php/connexion.example.php php/connexion.php
+   ```
+2. Edit `php/connexion.php` with your actual database credentials:
+   -  For **local development (XAMPP)**:
+      ```php
+      $servername = "localhost";
+      $username = "root";
+      $password = "";
+      $dbname = "memora";
+      ```
+   -  For **production hosting**:
+      ```php
+      $servername = "your-host.com";
+      $username = "your-username";
+      $password = "your-password";
+      $dbname = "your-database";
+      ```
+
+### 4. Run the Application
+
+-  Start XAMPP (Apache + MySQL)
+-  Navigate to `http://localhost/Memora/`
+-  Register a new account or login
+
+---
+
+## 🔒 Security Notes
+
+-  `php/connexion.php` is **excluded from Git** for security
+-  Use `php/connexion.example.php` as a template
+-  Never commit passwords or API keys
+-  Keep your `.gitignore` file updated
 
 ---
 
@@ -40,11 +86,11 @@ memora/
 
 ## 👥 Team
 
-- **Rayen Drira** – Frontend, Backend, UI Design – *Product Owner*  
-- **Hadil Fekih** – Frontend, Documentation – *Scrum Master*  
-- **Sarra Ayoub** – Frontend, System Design – *Developer*  
-- **Mohamed Yassine Romdhani** – UI Design, Testing – *Developer*  
-- **Mohamed Malek Sakly** – Database, Testing – *Developer*
+-  **Rayen Drira** – Frontend, Backend, UI Design – _Product Owner_
+-  **Hadil Fekih** – Frontend, Documentation – _Scrum Master_
+-  **Sarra Ayoub** – Frontend, System Design – _Developer_
+-  **Mohamed Yassine Romdhani** – UI Design, Testing – _Developer_
+-  **Mohamed Malek Sakly** – Database, Testing – _Developer_
 
 ---
 
